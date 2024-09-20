@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
 class Product extends Model
@@ -15,8 +16,8 @@ class Product extends Model
        "name",
        "price",
        "description",
-    //    "category_id",
        "slug" ,
+       "category_id",
     ];
 
     //FUNZIONE SLUG
@@ -44,9 +45,18 @@ class Product extends Model
     }
 
     // RELAZIONI
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     public function ebooks(): HasOne
     {
         return $this->hasOne(Ebook::class);
     }
     
+    public function plans(): HasOne
+    {
+        return $this->hasOne(Plan::class);
+    }
 }

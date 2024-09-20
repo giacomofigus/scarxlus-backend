@@ -17,11 +17,10 @@ return new class extends Migration
             $table->decimal("price", 5,2)->required();
             $table->text('description')->nullable();
             $table->string('slug', 255)->unique();
-
-            // $table->unsignedBigInteger("category_id")->nullable();
-            // $table->foreign("category_id")->references("id")->on("categories")->onDelete("set null");
+            $table->unsignedBigInteger('category_id');
             
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
