@@ -1,4 +1,8 @@
 <?php
+use App\Http\Controllers\Api\PlansController;
+use App\Http\Controllers\Api\TestimonialsController;
+use App\Http\Controllers\Api\EbookController;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/plans', [PlansController::class, 'index']);
+Route::get('/testimonials', [TestimonialsController::class, 'index']);
+Route::get('/ebooks', [EbookController::class, 'index']);
+

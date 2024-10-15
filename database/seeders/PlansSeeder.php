@@ -20,7 +20,23 @@ class PlansSeeder extends Seeder
                 "test_videocall" => TRUE,
                 "send_photos" => FALSE,
                 "workout_videocall" => FALSE,
-                "product_id" => 3,
+                "product_id" => 5,
+            ],
+            [
+                'type' => 'Elite',
+                "personalized" => TRUE,
+                "test_videocall" => TRUE,
+                "send_photos" => TRUE,
+                "workout_videocall" => FALSE,
+                "product_id" => 6,
+            ],
+            [
+                'type' => 'Personal Trainer',
+                "personalized" => TRUE,
+                "test_videocall" => TRUE,
+                "send_photos" => TRUE,
+                "workout_videocall" => TRUE,
+                "product_id" => 7,
             ],
         ];
 

@@ -17,19 +17,43 @@ class ProductSeeder extends Seeder
         $data = [
             [
                 'name' => 'Handstand',
-                'price' => 14.99,
+                'price' => 0.00,
                 'description' => 'In questo libro scoprirai i migliori esercizi per poter allenare la verticale',
                 'category_id' => $ebooks->id,
             ],
             [
-                'name' => 'Planche',
-                'price' => 29.99,
+                'name' => 'Iron Cross',
+                'price' => 0.00,
+                'description' => 'In questo libro scoprirai i migliori esercizi per poter allenare la planche',
+                'category_id' => $ebooks->id,
+            ],
+            [
+                'name' => 'Planche 1',
+                'price' => 30.00,
+                'description' => 'In questo libro scoprirai i migliori esercizi per poter allenare la planche',
+                'category_id' => $ebooks->id,
+            ],
+            [
+                'name' => 'Front 1',
+                'price' => 30.00,
                 'description' => 'In questo libro scoprirai i migliori esercizi per poter allenare la planche',
                 'category_id' => $ebooks->id,
             ],
             [
                 'name' => 'Standard',
                 'price' => 75.00,
+                'description' => 'In questa scheda di allenamento troverai:',
+                'category_id' => $workout_plans->id,
+            ],
+            [
+                'name' => 'Elite',
+                'price' => 150.00,
+                'description' => 'In questa scheda di allenamento troverai:',
+                'category_id' => $workout_plans->id,
+            ],
+            [
+                'name' => 'Personal Trainer',
+                'price' => 180.00,
                 'description' => 'In questa scheda di allenamento troverai:',
                 'category_id' => $workout_plans->id,
             ],
