@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             EbookSeeder::class,
+            ImageSeeder::class,
             PlansSeeder::class,
             TestimonialSeeder::class,
         ]);

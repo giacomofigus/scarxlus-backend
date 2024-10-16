@@ -11,7 +11,7 @@ use App\Models\Ebook;
 class EbookController extends Controller
 {
     public function index(){
-        $ebooks = Ebook::with('product')->get();
+        $ebooks = Ebook::with(['product', 'images'])->get();
 
         return response()->json([
             'success' => true,

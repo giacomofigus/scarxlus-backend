@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("file_path", 255)->required();
             $table->date("date_release")->required();
-            $table->string("images")->nullable();
+            // $table->string("images")->nullable();
             $table->string("level", 50)->required();
             $table->text("equipment")->nullable();
             $table->text("prerequisites")->required();
