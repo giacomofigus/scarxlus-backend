@@ -1,1 +1,147 @@
-@import '~bootstrap/scss/bootstrap'
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import '~bootstrap/scss/bootstrap';
+
+:root{
+    --yellow: #c99700;
+    --black: #1e1e1e;
+    --bg: #0b0b0b;
+    --bg-secondary: #2a2a2a;
+    --text-primary: #eeeeee;
+    --text-primary-2: rgba(255, 255, 255, 0.68);
+    --text-secondary: #878787;
+    --font-bebas: 'Bebas Neue', sans-serif;
+
+    --input-border-color: #878787; /* Bordo standard */
+    --input-border-focus: none; /* Bordo in focus */
+    --error-color: #ff4d4d; /* Colore per gli errori */
+}
+
+body{
+    background-color: var(--bg);
+}
+
+.color-black{
+    color: var(--black);
+}
+
+.background-black{
+    background-color: var(--black);
+}
+
+.text-primary-2{
+    color: var(--text-primary);
+}
+
+.font-bebas{
+    font-family: var(--font-bebas);
+}
+
+// INPUT DESIGN
+.custom-input{
+    background-color: var(--black);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border-color);
+    outline: none;
+    box-shadow: none;
+    padding-block: 12px;
+    font-size: 16px;
+}
+.custom-input:hover{
+    border-color: var(--input-border-focus);
+}
+.custom-input:focus, 
+.custom-input:active {
+    color: var(--text-primary);
+    background-color: var(--black);
+    border-color: var(--input-border-focus);
+    box-shadow: none;
+    outline: none;
+}
+.custom-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 1; 
+    font-weight: 600;
+}
+.btn-custom{
+    background-color: var(--yellow);
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.btn-custom:hover{
+    background-color: #b48700;
+}
+//
+
+
+//// GRANDEZZA FORM
+.w-form{
+    width: 50%;
+}
+@media (min-width: 320px) and (max-width: 1024px){
+    .w-form{
+        width: 75%;
+    }
+}
+////
+
+
+// VIEWHEIGHT CONTAINER
+@media (max-width: 767px) {
+    .container-fluid {
+        
+        min-height: 100vh;  /* Imposta altezza a auto per schermi piccoli */
+    }
+}
+
+@media (min-width: 768px) {
+    .container-fluid {
+        height: 100vh; /* Imposta altezza al 100% per schermi grandi */
+    }
+}
+
+// BACKGROUND IMAGE 
+.bg-image{
+    background: url('https://picsum.photos/200/300');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+// ICONE NAV
+.nav{
+    a{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: var(--bg-secondary);
+        border-radius: 50%;
+    }
+
+    button{
+        background-color: var(--bg-secondary);
+        border: none;
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        padding: 5px;
+        padding-inline: 10px;
+    }
+}
+.icon{
+    width: 18px;
+    height: 18px;
+}
+
+.rotate-180{
+    transform: rotate(180deg);
+}
+
+.left-container{
+    position: relative;
+}
+
+@media screen and (max-width:768px){
+    .left-container{
+        position: inherit;
+    }
+}

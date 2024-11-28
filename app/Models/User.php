@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -19,12 +20,37 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
-        'telephone',
+        'surname',
         'role',
         'slug',
+        'email',
+        'password',
+        'accepted_terms'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            $user->slug = static::generateSlug($user->name, $user->surname);
+        });
+    }
+
+    public static function generateSlug($name, $surname)
+    {
+        $baseSlug = Str::slug($name . ' ' . $surname);
+
+        $count = static::where('slug', $baseSlug)->count();
+
+        if($count > 0){
+            $uniqueIdentifier = Str::random(5); 
+            return $baseSlug . '-' . $uniqueIdentifier;
+        }
+
+        return $baseSlug;
+    }
+
 
     /**
      * The attributes that should be hidden for serialization.
